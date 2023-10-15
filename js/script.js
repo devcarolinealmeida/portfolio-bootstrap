@@ -1,4 +1,3 @@
-
 /* scroller */
 window.addEventListener("scroll", setScrollVar);
 window.addEventListener("resize", setScrollVar);

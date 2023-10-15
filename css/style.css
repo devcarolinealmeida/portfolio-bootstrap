@@ -1,5 +1,9 @@
-@import './../../node_modules/bootstrap/dist/css/bootstrap.css';
-@import 'nav.css';
+@import './../../node_modules/bootstrap/dist/css/bootstrap';
+
+/* font/*/
+@import './../fonts/webfontkit-20231012-153251/stylesheet.css';
+
+@import 'nav';
 
 *,
 *::before,
@@ -9,31 +13,15 @@
 
 :root {
     --scroll: 0;
+    --bs-body-font-family: 'pp_morisemibold', sans-serif;
+   /*  --bs-body-bg: rgb(0,0,0,1); */
 }
 
 body {
-    font-family: 'pp_moriregular', sans-serif;
     margin: 0;
     font-size: 16px;
-    color: #e6e9ea;
-    background-color: #000;
 }
 
-/* .container-scroller {
-    width: 100%;
-    height: 100vh;
-    background: #2b323c;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
-
-.full-screen-section {
-    height: 100vh;
-    position: relative;
-}
 
 .top-section {
     display: flex;
@@ -56,59 +44,8 @@ body {
 
 .top-section h1 {
     font-size: clamp(2rem, 1.2353rem + 3.1373vw, 5rem);
-    font-weight: 700;
 }
 
-.top-section .auto-type {
-    color: rgb(219, 62, 5);
-}
-
-
-.imgs > .top-section-img {
-    /* (oldVal - oldmin) * new Range / old Range + newMin */
-    --value:  min(var(--scroll), 30) * 50 / 30;
-    width: calc(50vw + 1vw * var(--value));
-    transform: translateY(calc(50% - 1% * var(--value)));
-}
-
-.imgs > .top-section-img {
-    width: 100vw;
-}
-.imgs > * {
-    position: fixed;
-    width: 100vw;
-    bottom: 0;
-    z-index: 10;
-    translate: 0 100%;
-    transition: translate 250ms ease-in-out;
-}
-
-    .imgs > .show {
-        translate: 0 0;
-    }
-
-    [data-img-to-show] {
-        position: absolute;
-        top: 20%;
-    }
-
-.section-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.card-header {
-    width: 90%;
-    --bs-card-bg: white;
-}
-
-.card-wrap {
-    display: flex;
-    gap: 1rem;
-    padding: 1em;
-}
 
 
 
