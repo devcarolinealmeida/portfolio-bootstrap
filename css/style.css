@@ -14,7 +14,7 @@
 :root {
     --scroll: 0;
     --bs-body-font-family: 'pp_morisemibold', sans-serif;
-   /*  --bs-body-bg: rgb(0,0,0,1); */
+    --bs-nav-link-color: rgb(200, 200, 200);
 }
 
 body {
@@ -22,7 +22,7 @@ body {
     font-size: 16px;
 }
 
-
+/* section intro */
 .top-section {
     display: flex;
     text-align: start;
@@ -47,6 +47,36 @@ body {
 }
 
 
+/* section tab projects */
+.tab-projects .tab-projects-container {
+    min-height: 25rem;
+}
 
+    .tab-projects .nav-link {
+        color: rgb(100, 100, 100);
+    }
 
+    .tab-projects > .tab-projects-container {
+        /* (oldVal - oldmin) * new Range / old Range + newMin */
+        --value:  min(var(--scroll), 30) * 50 / 30;
+        width: calc(50vw + 1vw * var(--value));
+        transform: translateY(calc(50% - 1% * var(--value)));
+    }
 
+    .tab-projects > * {
+        position: fixed;
+        width: 100vw;
+        bottom: 0;
+        z-index: 10;
+        translate: 0 100%;
+        transition: translate 250ms ease-in-out;
+    }
+    
+        .tab-projects > .show {
+            translate: 0 0;
+        }
+    
+        [data-img-to-show] {
+            position: absolute;
+            top: 20%;
+        }
