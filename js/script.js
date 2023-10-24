@@ -37,4 +37,24 @@ var typed = new Typed('.auto-type', {
     loop: true
   });
 
-  
+
+/* cursor custom */
+    let mouseX = 0
+    let mouseY = 0
+    let customCursor = document.querySelector('.cursor-wrapper');
+
+    document.addEventListener("mousemove", setMousePosition, false);
+
+    function moveCursor(timestamp) {
+      customCursor.style.setProperty("--cursorXPos", mouseX + "px");
+      customCursor.style.setProperty("--cursorYPos", mouseY + "px");
+
+      requestAnimationFrame(moveCursor);
+    }
+
+    function setMousePosition(event) {
+      mouseX = event.clientX;
+      mouseY = event.clientY;
+    }
+
+    moveCursor();
