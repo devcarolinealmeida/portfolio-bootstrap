@@ -1,16 +1,49 @@
+/* splash screen */
+
+let intro = document.querySelector(".intro");
+let introText = document.querySelector(".intro-text");
+let navbar = document.querySelector(".navbar");
+let transitionSection = document.querySelector(".transition-section");
+let topSection = document.querySelector(".top-section");
+
+window.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    introText.classList.add("fade");
+    introText.classList.remove("active");
+  }, 3500);
+
+  setTimeout(() => {
+    /* intro.style.top = '-100vh'; */
+    intro.style.zIndex = "-1";
+    transitionSection.style.transform = "translateY(-100vh)";
+  }, 3500);
+  setTimeout(() => {
+    topSection.style.transform = "translateY(-100vh)";
+  }, 3800);
+
+  setTimeout(() => {
+    navbar.classList.remove("opacity-0");
+    navbar.classList.add("active");
+  }, 4000);
+});
+
 /* scroller */
 window.addEventListener("scroll", setScrollVar);
 window.addEventListener("resize", setScrollVar);
 
 function setScrollVar() {
-    const htmlElement = document.documentElement;
-    const percentOfScreenHeightScrolled = htmlElement.scrollTop / htmlElement.clientHeight;
-    htmlElement.style.setProperty("--scroll", Math.min(percentOfScreenHeightScrolled * 100, 100));
+  const htmlElement = document.documentElement;
+  const percentOfScreenHeightScrolled =
+    htmlElement.scrollTop / htmlElement.clientHeight;
+  htmlElement.style.setProperty(
+    "--scroll",
+    Math.min(percentOfScreenHeightScrolled * 100, 100)
+  );
 }
 
-setScrollVar()
+setScrollVar();
 
-const observer = new IntersectionObserver(entries => {
+/* const observer = new IntersectionObserver(entries => {
     for(let i = entries.length - 1; i >= 0; i--) {
         const entry = entries[i]
         if(entry.isIntersecting) {
@@ -26,35 +59,44 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll("[data-img-to-show]").forEach(section => {
     observer.observe(section)
-})
+}) */
 
+/*----- Auto typed ----*/
+/* intro */
+var typed = new Typed(".auto-type", {
+  strings: ["Oi, Hi, Ciao!"],
+  typeSpeed: 130,
+  backSpeed: 5,
+  loop: false,
+});
 
-/* Auto typed */
-var typed = new Typed('.auto-type', {
-    strings: ['Caroline.', 'a Developer.', 'Freelancer.'],
-    typeSpeed: 130,
-    backSpeed: 100,
-    loop: true
-  });
+/* apresentazione I'm */
+var typed = new Typed(".auto-type-2", {
+  strings: ["caroline", "dev", "front-end", "freelance"],
+  typeSpeed: 100,
+  backSpeed: 50,
+  loop: true,
+});
 
+console.log(typed.strings[0])
 
 /* cursor custom */
-    let mouseX = 0
-    let mouseY = 0
-    let customCursor = document.querySelector('.cursor-wrapper');
+let mouseX = 0;
+let mouseY = 0;
+let customCursor = document.querySelector(".cursor-wrapper");
 
-    document.addEventListener("mousemove", setMousePosition, false);
+document.addEventListener("mousemove", setMousePosition, false);
 
-    function moveCursor(timestamp) {
-      customCursor.style.setProperty("--cursorXPos", mouseX + "px");
-      customCursor.style.setProperty("--cursorYPos", mouseY + "px");
+function moveCursor(timestamp) {
+  customCursor.style.setProperty("--cursorXPos", mouseX + "px");
+  customCursor.style.setProperty("--cursorYPos", mouseY + "px");
 
-      requestAnimationFrame(moveCursor);
-    }
+  requestAnimationFrame(moveCursor);
+}
 
-    function setMousePosition(event) {
-      mouseX = event.clientX;
-      mouseY = event.clientY;
-    }
+function setMousePosition(event) {
+  mouseX = event.clientX;
+  mouseY = event.clientY;
+}
 
-    moveCursor();
+moveCursor();
