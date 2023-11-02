@@ -10,21 +10,21 @@ window.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     introText.classList.add("fade");
     introText.classList.remove("active");
-  }, 3500);
+  }, 3800);
 
   setTimeout(() => {
     /* intro.style.top = '-100vh'; */
     intro.style.zIndex = "-1";
     transitionSection.style.transform = "translateY(-100vh)";
-  }, 3500);
+  }, 4000);
   setTimeout(() => {
     topSection.style.transform = "translateY(-100vh)";
-  }, 3800);
+  }, 4200);
 
   setTimeout(() => {
     navbar.classList.remove("opacity-0");
     navbar.classList.add("active");
-  }, 4000);
+  }, 4500);
 });
 
 /* scroller */
@@ -66,8 +66,9 @@ document.querySelectorAll("[data-img-to-show]").forEach(section => {
 var typed = new Typed(".auto-type", {
   strings: ["Oi, Hi, Ciao!"],
   typeSpeed: 130,
-  backSpeed: 5,
-  loop: false,
+  /* backSpeed: 5,
+  loop: false, */
+  startDelay: 500,
 });
 
 /* apresentazione I'm */
@@ -76,9 +77,51 @@ var typed = new Typed(".auto-type-2", {
   typeSpeed: 100,
   backSpeed: 50,
   loop: true,
+  
+  onStringTyped: (arrayPos, self) => {
+    console.log(arrayPos, colors)
+
+    var colors = [
+      "var(--bs-yellow)",
+      "var(--bs-orange)",
+      "var(--bs-purple)",
+      "var(--bs-green)",
+    ];
+    var currentColor = 0;
+    var arrayPos = document.querySelectorAll("#auto-type-2");
+    console.log(arrayPos)
+
+
+    function changeColor() {
+      --currentColor;
+      if (currentColor < 0) currentColor = colors.length - 1;
+      for (var i = 0; i < arrayPos.length; i++) {
+        arrayPos[i].style.color = colors[(currentColor + i) % colors.length];
+      }
+    }
+
+    changeColor();
+  },
 });
 
-console.log(typed.strings[0])
+/* var colors = [
+  "var(--bs-yellow)",
+  "var(--bs-orange)",
+  "var(--bs-purple)",
+  "var(--bs-green)",
+];
+var currentColor = 0;
+var lis = document.querySelectorAll("#auto-type-2");
+
+function changeColor() {
+  --currentColor;
+  if (currentColor < 0) currentColor = colors.length - 1;
+  for (var i = 0; i < lis.length; i++) {
+    lis[i].style.color = colors[(currentColor + i) % colors.length];
+  }
+}
+
+setInterval(changeColor, 3500); */
 
 /* cursor custom */
 let mouseX = 0;

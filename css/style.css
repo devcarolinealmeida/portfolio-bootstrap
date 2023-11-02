@@ -15,6 +15,10 @@
     --scroll: 0;
     --bs-body-font-family: 'pp_morisemibold', sans-serif;
     --bs-nav-link-color: rgb(200, 200, 200);
+    --bs-yellow: #EAFD53;
+    --bs-purple: #9D95FF;
+    --bs-orange: #FE8708;
+    --bs-green: #7EE787;
 }
 
 
@@ -120,7 +124,7 @@ body {
         background-color: rgba(126, 231, 135, var(--background-opacity));
     }  */
 
-    .top-section h1 {
+    .top-section h4 {
         font-size: clamp(2rem, 1.2353rem + 3.1373vw, 5rem);
     }
 
