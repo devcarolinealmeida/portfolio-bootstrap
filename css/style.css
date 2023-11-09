@@ -113,7 +113,7 @@ body {
     padding: 0;
     position: sticky;
     top: 0;
-    transform: translateY(100vh);
+    /* transform: translateY(100vh); */
     background-color: #0E100F;
     border-radius: 35% 35% 0 0;
     transition: ease-in-out 2s;
@@ -134,29 +134,29 @@ body {
 
 
 /* section tab projects */
-.tab-projects .tab-projects-container {
+.about-section .about-container {
     min-height: 25rem;
 }
 
-    .tab-projects .nav-link {
-        color: rgb(100, 100, 100);
-    }
-
-    .tab-projects > .tab-projects-container {
+    .about-section > .about-container {
         /* (oldVal - oldmin) * new Range / old Range + newMin */
-        --value:  min(var(--scroll), 100) * 50 / 30;
+        /* --value:  min(var(--scroll), 100) * 50 / 30;
         max-width: calc(50vw + 1vw * var(--value));
-        transform: translateY(calc(100% - 2% * var(--value)));
+        transform: translateY(calc(100% - 2% * var(--value))); */
+        --value:  min(var(--scroll), 30) * 50 / 30;
+        width: calc(50vw + 1vw * var(--value));
+        transform: translateY(calc(50% - 1% * var(--value)));
         height: 90vh;
+        background-color: var(--bs-purple);
     }
 
     @media (width <= 1000px) {
-        .tab-projects > .tab-projects-container {
+        .about-section > .about-container {
             width: 100vw;
         }
     }
 
-    .tab-projects > * {
+    .about-section > * {
         position: fixed;
         width: 100vw;
         bottom: 0;
@@ -165,14 +165,10 @@ body {
         transition: translate 250ms ease-in-out;
     }
     
-        .tab-projects > .show {
+        .about-section > .show {
             translate: 0 0;
         }
     
-        [data-img-to-show] {
-            position: absolute;
-            top: 20%;
-        }
 
 
 
