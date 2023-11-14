@@ -13,7 +13,6 @@ window.addEventListener("DOMContentLoaded", () => {
   }, 3800);
 
   setTimeout(() => {
-    /* intro.style.top = '-100vh'; */
     intro.style.zIndex = "-1";
     transitionSection.style.transform = "translateY(-100vh)";
   }, 4000);

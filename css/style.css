@@ -5,6 +5,7 @@
 
 @import 'nav';
 
+
 *,
 *::before,
 *::after {
@@ -12,7 +13,6 @@
 }
 
 :root {
-    --scroll: 0;
     --bs-body-font-family: 'pp_morisemibold', sans-serif;
     --bs-nav-link-color: rgb(200, 200, 200);
     --bs-yellow: #EAFD53;
@@ -70,9 +70,7 @@ body {
     top: 0;
     width: 100%;
     height: 100vh;
-    background-color: #0E100F;
     transition: 1s;
-  
 }
 
 .intro-text {
@@ -106,6 +104,12 @@ body {
         /* border-radius: 30% 30% 0 0; */
     }
 /* ---- */
+.full-screen-section {
+    max-height: 100vh;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+}
 
 .top-section {
     display: flex;
@@ -114,8 +118,9 @@ body {
     position: sticky;
     top: 0;
     /* transform: translateY(100vh); */
-    background-color: #0E100F;
-    border-radius: 35% 35% 0 0;
+    translate: 0 calc(-1% * (max(var(--scroll), 25) - 25) * 100 / 75);
+    /* background-color: #0E100F; */
+    /* border-radius: 35% 35% 0 0; */
     transition: ease-in-out 2s;
 }
 
@@ -128,25 +133,18 @@ body {
         font-size: clamp(2rem, 1.2353rem + 3.1373vw, 5rem);
     }
 
-    .top-section .middle {
-        background-color: #0E100F;;
-    } 
-
 
 /* section tab projects */
-.about-section .about-container {
+/* .about-section .about-container {
     min-height: 25rem;
-}
+} */
 
     .about-section > .about-container {
-        /* (oldVal - oldmin) * new Range / old Range + newMin */
-        /* --value:  min(var(--scroll), 100) * 50 / 30;
-        max-width: calc(50vw + 1vw * var(--value));
-        transform: translateY(calc(100% - 2% * var(--value))); */
-        --value:  min(var(--scroll), 30) * 50 / 30;
-        width: calc(50vw + 1vw * var(--value));
+        width: 100%;
+        /* --value:  min(var(--scroll), 30) * 50 / 30;
+        width: calc(50vw + 1vw * var(--value)); */
         transform: translateY(calc(50% - 1% * var(--value)));
-        height: 90vh;
+       /*  height: 90vh; */
         background-color: var(--bs-purple);
     }
 
@@ -169,6 +167,55 @@ body {
             translate: 0 0;
         }
     
+/* nuova section test */
+.imgs > .top-section-img {
+    /* (oldVal - oldmin) * new Range / old Range + newMin */
+    --value:  min(var(--scroll), 30) * 50 / 30;
+    --value-2:  min(var(--scroll), 100) * 60 / 20;
+    width: calc(50vw + 1vw * var(--value));
+    transform: translateY(calc(100% - 1% * var(--value-2)));
+}
 
+@media (width <= 1000px) {
+    .imgs > .top-section-img {
+        width: 100vw;
+    }
+}
+.imgs > * {
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    z-index: 10;
+    translate: 0 100%;
+    transition: translate 250ms ease-in-out;
+}
+
+    .imgs > .show {
+        translate: 0 0;
+    }
+
+    [data-img-to-show] {
+        position: absolute;
+        top: 20%;
+    }
+
+.section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+}
+
+.card-header {
+    width: 90%;
+    --bs-card-bg: white;
+}
+
+.card-wrap {
+    display: flex;
+    gap: 1rem;
+    padding: 1em;
+}
 
 
