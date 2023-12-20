@@ -16,8 +16,9 @@ window.addEventListener("DOMContentLoaded", () => {
     intro.style.zIndex = "-1";
     transitionSection.style.transform = "translateY(-100vh)";
   }, 4000);
+  
   setTimeout(() => {
-    topSection.style.transform = "translateY(-100vh)";
+    transitionSection.style.minHeight = "0";
   }, 4200);
 
   setTimeout(() => {
