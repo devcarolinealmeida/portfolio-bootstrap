@@ -41,19 +41,19 @@
           </span>
         </button>
         <div
-          class="collapse navbar-collapse justify-content-lg-end"
+          class="collapse navbar-collapse"
           id="navbarNavAltMarkup"
         >
           <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-            <a class="nav-link" href="#">Projects</a>
-            <a class="nav-link" href="#">Contacts</a>
+            <a class="nav-link active" aria-current="page" href="#projects">Projects</a>
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#contacts">Contacts</a>
           </div>
         </div>
       </div>
     </nav>
-
-    <div class="about-section">
+    
+    <div class="about-section" id="about">
       <div class="about-section-top show bg-primary">
         <div class="about-container container-lg d-flex align-content-center flex-wrap">
           <div class="row">
@@ -121,10 +121,10 @@
       <div class="container-fluid"></div>
     </section>
 
-    <section class="top-section full-screen-section- bg-black">
+    <section class="translate-section bg-black">
       <div class="container-fluid middle bg-black">
         <div class="row align-items-center min-vh-100">
-          <h4 class="text-light text-center">
+          <h4 class="fs-1 text-light text-center">
             <span class="">I'm &#123;</span>
             <span class="auto-type-2" id="auto-type-2"></span
             ><span>&#125;</span>
@@ -133,7 +133,7 @@
       </div>
     </section>
 
-    <section class="section-projects min-vh-100 bg-black">
+    <section class="section-projects translate-section bg-black" id="projects">
       <div class="container middle ">
         <div class="row d-flex align-content-md-start py-5">
           <h4 class="fs-1 text-primary">&#123; Projects &#125;&#123; Projects &#125;&#123; Projects &#125;&#123; Projects &#125;</h4>
@@ -256,6 +256,31 @@
         </div>
       </div>
     </section>
+    <footer class="footer bg-white" id="contacts">
+      <div class="container-lg">
+        <div class="row">
+          <div class="col-6">
+            <h4 class="fs-1 text-black mb-5">Get in Touch</h4>
+            <div class="d-flex gap-4">
+              <button type="button" class="btn btn-outline-dark btn-lg">Email</button>
+              <button type="button" class="btn btn-outline-dark btn-lg">LinkedIn</button>
+              <button type="button" class="btn btn-outline-dark btn-lg">Github</button>
+            </div>
+          </div>
+        </div>
+        <div class="row border-top border-dark pt-4">
+          <div class="col-12 d-flex justify-content-between">
+            <div class="d-flex gap-4">
+              <p>&copy2024, <a href="#" class="link-dark">Caroline Almeida</a></p>
+              <p>Designed by <a href="#" class="link-dark">Anna Bigaran</a></p>
+            </div>
+            <div>
+              <p>See the recent update on <a href="#" class="link-dark">GitHub</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="js/script.js"></script>
